@@ -1,8 +1,15 @@
 blockytalky.onReceivedNumber(function (key, value) {
     if (value == 1) {
-        basic.showIcon(IconNames.Happy)
+        basic.showIcon(IconNames.Heart)
+    } else if (value == 2) {
+        basic.showIcon(IconNames.SmallHeart)
+    } else {
+        basic.showIcon(IconNames.No)
     }
-    if (value == 0) {
-        basic.showIcon(IconNames.Sad)
-    }
+})
+bluetooth.onBluetoothConnected(function () {
+    basic.showIcon(IconNames.Happy)
+})
+bluetooth.onBluetoothDisconnected(function () {
+    basic.showIcon(IconNames.Sad)
 })
